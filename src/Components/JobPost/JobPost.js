@@ -6,7 +6,7 @@ import CardContent from '@material-ui/core/CardContent'
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import JobBoard from '../JobBoard/JobBoard'
-
+import {content} from '../../utility/emailContent';
 const useStyles = makeStyles(theme => ({
   card: {
     maxWidth: 345
@@ -34,7 +34,12 @@ const JobPost = ({jobPost}) => {
             </Typography>
           </CardContent>
           <CardActions >
-            <Button style ={{mariginLeft: "auto"}}size="small" color="primary" href={`mailto:${jobPost.email}`} target="_blank">
+            <Button 
+            style ={{mariginLeft: "auto"}}
+            size="small" 
+            color="primary" 
+            // target="_blank"
+            href={`mailto:${jobPost.email}?subject=${content.subject}&body=${jobPost.firstName}${content.body}`}>
               Contact
             </Button>
           </CardActions>
