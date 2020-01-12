@@ -2,7 +2,7 @@ export const fetchJobPostings = () => {
 return [
   {
     "id": "1012",
-    "industry": "Supply Chain",
+    "industry": "Technical Sales",
     "skillLevel": "Entry",
     "companies_of_interest" : [],
     "email": "eicole0712@gmail.com",
