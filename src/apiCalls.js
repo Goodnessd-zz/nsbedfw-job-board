@@ -1,112 +1,166 @@
 export const fetchJobPostings = () => {
 return [
   {
+    "id": "1018",
+    "firstName": "Imari",
+    "lastName": "Wickliff",
+    "email": "imaridanyele@gmail.com",
+    "industry": "Business",
+    "skillLevel": "Entry",
+    "companies_of_interest" : []
+  },
+  {
+    "id": "1017",
+    "firstName": "Lainette",
+    "lastName": "Johnson",
+    "email": "joycelynjohnson1@gmail.com",
+    "industry": "Software",
+    "skillLevel": "Senior",
+    "companies_of_interest" : ["PWC, Deloitte, Accenture, KPMG"]
+  },
+  {
+    "id": "1016",
+    "firstName": "Christopher",
+    "lastName": "Eyebagha",
+    "email": "christopher.tolulope@yahoo.com",
+    "industry": "Chemical",
+    "skillLevel": "Associate",
+    "companies_of_interest" : ["Tempur Sealy, Schlumberger, Baker Hughes"]
+  },
+  {
+    "id": "1015",
+    "firstName": "Ozobia",
+    "lastName": "Nwadibia",
+    "email": "Ozobia@ozobia.dev",
+    "industry": "Software",
+    "skillLevel": "Entry",
+    "companies_of_interest" : ["USAA, Microsoft, Amazon"]
+  },
+  {
+    "id": "1014",
+    "firstName": "Elsa",
+    "lastName": "Siyume",
+    "email": "usjobsElsa@gmail.com",
+    "industry": "Construction",
+    "skillLevel": "Entry",
+    "companies_of_interest" : []
+  },
+  {
+    "id": "1013",
+    "firstName": "Kenneth",
+    "lastName": "Chambers",
+    "email": "kchambers8200@gmail.com",
+    "industry": "Operations",
+    "skillLevel": "Associate",
+    "companies_of_interest" : []
+  },
+  {
     "id": "1012",
+    "firstName": "Emerald",
+    "lastName": "Cole",
+    "email": "eicole0712@gmail.com",
     "industry": "Technical Sales",
     "skillLevel": "Entry",
-    "companies_of_interest" : [],
-    "email": "eicole0712@gmail.com",
-    "firstName": "Emerald",
-    "lastName": "Cole"
+    "companies_of_interest" : []
   },
   {
     "id": "1011",
+    "firstName": "Kijyana",
+    "lastName": "Smith",
+    "email": "kijyanasm@gmail.com",
     "industry": "Telecommunication",
     "skillLevel": "Entry",
-    "companies_of_interest" : [],
-    "email": "kijyanasm@gmail.com",
-    "firstName": "Kijyana",
-    "lastName": "Smith"
+    "companies_of_interest" : []
   },
   {
     "id": "1010",
+    "firstName": "Christopher",
+    "lastName": "Ejiofor",
+    "email": "cejiofor@gmail.com",
     "industry": "Software",
     "skillLevel": "Entry",
-    "companies_of_interest" : [],
-    "email": "cejiofor@gmail.com",
-    "firstName": "Christopher",
-    "lastName": "Ejiofor"
+    "companies_of_interest" : []
   },
   {
     "id": "1009",
+    "firstName": "Glen",
+    "lastName": "Nwaefulu",
+    "email": "gnwaefulu@gmail.com",
     "industry": "General Technology",
     "skillLevel": "Associate",
-    "companies_of_interest" : ["Ernst & Young, Delloite, IBM, Google"],
-    "email": "gnwaefulu@gmail.com",
-    "firstName": "Glen",
-    "lastName": "Nwaefulu"
+    "companies_of_interest" : ["Ernst & Young, Delloite, IBM, Google"]
   },
   {
     "id": "1008",
+    "firstName": "Charlton",
+    "lastName": "Nwaefulu",
+    "email": "charltonnwaefulu54@gmail.com",
     "industry": "General Business",
     "skillLevel": "Associate",
-    "companies_of_interest" : [],
-    "email": "charltonnwaefulu54@gmail.com",
-    "firstName": "Charlton",
-    "lastName": "Nwaefulu"
+    "companies_of_interest" : []
   },
   {
     "id": "1007",
+    "firstName": "Alex",
+    "lastName": "Brown",
+    "email": "jamesbrown5214@gmail.com",
     "industry": "Business",
     "skillLevel": "Entry",
-    "companies_of_interest" : ["AT&T, Microsoft, Verizon, Amazon, JP Morgan"],
-    "email": "jamesbrown5214@gmail.com",
-    "firstName": "Alex",
-    "lastName": "Brown"
+    "companies_of_interest" : ["AT&T, Microsoft, Verizon, Amazon, JP Morgan"]
   },
   {
     "id": "1006",
+    "firstName": "Edugie",
+    "lastName": "Irivbogbe",
+    "email": "eirivbogbe@gmail.com",
     "industry": "Software",
     "skillLevel": "Associate",
-    "companies_of_interest" : ["Microsoft, Google, Apple, Amazon, Verizon, Deloitte"],
-    "email": "eirivbogbe@gmail.com",
-    "firstName": "Edugie",
-    "lastName": "Irivbogbe"
+    "companies_of_interest" : ["Microsoft, Google, Apple, Amazon, Verizon, Deloitte"]
   },
   {
     "id": "1005",
+    "firstName": "Christopher",
+    "lastName": "Holloman",
+    "email": "caholloman3@gmail.com",
     "industry": "Software",
     "skillLevel": "Associate",
-    "companies_of_interest" : ["Microsoft, Deloitte, IBM, AT&T, Well Fargo, JP Morgan,Texas Instrument, Exxon"],
-    "email": "caholloman3@gmail.com",
-    "firstName": "Christopher",
-    "lastName": "Holloman"
+    "companies_of_interest" : ["Microsoft, Deloitte, IBM, AT&T, Well Fargo, JP Morgan,Texas Instrument, Exxon"]
   },
   {
     "id": "1004",
+    "firstName": "Christopher",
+    "lastName": "Eyebagha",
+    "email": "christopher.tolulope@yahoo.com",
     "industry": "Other",
     "skillLevel": "Entry",
-    "companies_of_interest" : ["Schlumberger"],
-    "email": "christopher.tolulope@yahoo.com",
-    "firstName": "Christopher",
-    "lastName": "Eyebagha"
+    "companies_of_interest" : ["Schlumberger"]
   },
   {
     "id": "1003",
+    "firstName": "Jelani",
+    "lastName": "Hurtault",
+    "email": "jhurta@gmail.com",
     "industry": "Software",
     "skillLevel": "Entry",
-    "companies_of_interest" : [],
-    "email": "jhurta@gmail.com",
-    "firstName": "Jelani",
-    "lastName": "Hurtault"
+    "companies_of_interest" : []
   },
   {
     "id": "1002",
+    "firstName": "Sochima",
+    "lastName": "Omenkeukwu",
+    "email": "omenkeukwu1@gmail.com",
     "industry": "Software",
     "skillLevel": "Entry",
-    "companies_of_interest" : [],
-    "email": "omenkeukwu1@gmail.com",
-    "firstName": "Sochima",
-    "lastName": "Omenkeukwu"
+    "companies_of_interest" : []
   },
   {
     "id": "1001",
+    "firstName": "Grace",
+    "lastName": "Fejokwu",
+    "email": "grace.fejokwu@gmail.com",
     "industry": "Cyber Security",
     "skillLevel": "Associate",
-    "companies_of_interest" : ["Microsoft, Google, IBM"],
-    "email": "grace.fejokwu@gmail.com",
-    "firstName": "Grace",
-    "lastName": "Fejokwu"
+    "companies_of_interest" : ["Microsoft, Google, IBM"]
   }
 ];
 };
