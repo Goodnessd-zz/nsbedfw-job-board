@@ -14,7 +14,7 @@ return [
     "firstName": "Lainette",
     "lastName": "Johnson",
     "email": "joycelynjohnson1@gmail.com",
-    "industry": "Software",
+    "industry": "Software Engineering",
     "skillLevel": "Senior",
     "companies_of_interest" : ["PWC, Deloitte, Accenture, KPMG"]
   },
@@ -23,7 +23,7 @@ return [
     "firstName": "Christopher",
     "lastName": "Eyebagha",
     "email": "christopher.tolulope@yahoo.com",
-    "industry": "Chemical",
+    "industry": "Chemical Engineering",
     "skillLevel": "Associate",
     "companies_of_interest" : ["Tempur Sealy, Schlumberger, Baker Hughes"]
   },
@@ -32,7 +32,7 @@ return [
     "firstName": "Ozobia",
     "lastName": "Nwadibia",
     "email": "Ozobia@ozobia.dev",
-    "industry": "Software",
+    "industry": "Software Engineering",
     "skillLevel": "Entry",
     "companies_of_interest" : ["USAA, Microsoft, Amazon"]
   },
@@ -41,7 +41,7 @@ return [
     "firstName": "Elsa",
     "lastName": "Siyume",
     "email": "usjobsElsa@gmail.com",
-    "industry": "Construction",
+    "industry": "Construction Engineering",
     "skillLevel": "Entry",
     "companies_of_interest" : []
   },
@@ -77,7 +77,7 @@ return [
     "firstName": "Christopher",
     "lastName": "Ejiofor",
     "email": "cejiofor@gmail.com",
-    "industry": "Software",
+    "industry": "Software Engineering",
     "skillLevel": "Entry",
     "companies_of_interest" : []
   },
@@ -113,7 +113,7 @@ return [
     "firstName": "Edugie",
     "lastName": "Irivbogbe",
     "email": "eirivbogbe@gmail.com",
-    "industry": "Software",
+    "industry": "Software Engineering",
     "skillLevel": "Associate",
     "companies_of_interest" : ["Microsoft, Google, Apple, Amazon, Verizon, Deloitte"]
   },
@@ -122,7 +122,7 @@ return [
     "firstName": "Christopher",
     "lastName": "Holloman",
     "email": "caholloman3@gmail.com",
-    "industry": "Software",
+    "industry": "Software Engineering",
     "skillLevel": "Associate",
     "companies_of_interest" : ["Microsoft, Deloitte, IBM, AT&T, Well Fargo, JP Morgan,Texas Instrument, Exxon"]
   },
@@ -140,7 +140,7 @@ return [
     "firstName": "Jelani",
     "lastName": "Hurtault",
     "email": "jhurta@gmail.com",
-    "industry": "Software",
+    "industry": "Software Engineering",
     "skillLevel": "Entry",
     "companies_of_interest" : []
   },
@@ -149,7 +149,7 @@ return [
     "firstName": "Sochima",
     "lastName": "Omenkeukwu",
     "email": "omenkeukwu1@gmail.com",
-    "industry": "Software",
+    "industry": "Software Engineering",
     "skillLevel": "Entry",
     "companies_of_interest" : []
   },

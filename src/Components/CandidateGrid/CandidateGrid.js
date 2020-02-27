@@ -9,6 +9,8 @@ import CardActions from '@material-ui/core/CardActions';
 import Button from '@material-ui/core/Button';
 import { makeStyles } from '@material-ui/core/styles';
 import Hero from '../Hero/Hero';
+import {fetchJobPostings} from '../../apiCalls';
+import {content} from '../../utility/emailContent';
 
 const useStyles = makeStyles(theme => ({
     cardGrid: {
@@ -31,32 +33,32 @@ const useStyles = makeStyles(theme => ({
 const CandidateGrid = () => {
   const classes = useStyles();
   const cards = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16];
+  const jobPosts = fetchJobPostings();
+
+  
 
   return <Container className={classes.cardGrid} maxWidth="md">
           <Hero header={false}></Hero>
           <Grid container spacing={4}>
-            {cards.map(card => (
-              <Grid item key={card} xs={12} sm={6} md={4}>
+            {jobPosts.map(post => (
+              <Grid item key={post.id} xs={12} sm={6} md={4}>
                 <Card className={classes.card}>
                   <CardMedia
                     className={classes.cardMedia}
-                    image="https://source.unsplash.com/random"
+                    image={`https://source.unsplash.com/featured/?${post.industry}`}
                     title="Image title"
                   />
                   <CardContent className={classes.cardContent}>
                     <Typography gutterBottom variant="h5" component="h2">
-                      Heading
+                      {post.firstName}
                     </Typography>
                     <Typography>
-                      This is a media card. You can use this section to describe the content.
+                      {`Looking for ${post.skillLevel} level positions in ${post.industry}.`}
                     </Typography>
                   </CardContent>
                   <CardActions>
-                    <Button size="small" color="primary">
-                      View
-                    </Button>
-                    <Button size="small" color="primary">
-                      Edit
+                    <Button href={`mailto:${post.email}?subject=${content.subject}&body=${post.firstName}${content.body}`} size="small" color="primary">
+                      Contact
                     </Button>
                   </CardActions>
                 </Card>
