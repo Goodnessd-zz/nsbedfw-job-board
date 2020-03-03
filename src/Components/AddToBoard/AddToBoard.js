@@ -6,15 +6,25 @@ import DialogContentText from '@material-ui/core/DialogContentText';
 import TextField from '@material-ui/core/TextField';
 import DialogActions from '@material-ui/core/DialogActions';
 import Button from '@material-ui/core/Button';
+import {makeStyles} from '@material-ui/core/styles';
 import Select from '@material-ui/core/Select';
 import MenuItem from '@material-ui/core/MenuItem';
-import InputLabel from '@material-ui/core/InputLabel';
-import JobPost from '../JobPost/JobPost'
-import TextFieldWrapper from '../TextFieldWrapper/TextFieldWrapper';
+import FormControl from '@material-ui/core/FormControl';
+import FormHelperText from '@material-ui/core/FormHelperText';
 import api from '../../utility/api';
+import industries from '../../utility/industries';
 
-export default function AddTOBoard({open, onClose}) {
+const useStyles = makeStyles(theme => ({
+  formControl: {
+    marginBottom: theme.spacing(1),
+    marginTop: theme.spacing(1),
+    mindWidth: 120
+  }
+}));
 
+export default function AddToBoard({open, onClose}) {
+  const skillLevels = ["Entry", "Associate", "Senior"];
+  const classes = useStyles();
   const [newCandidate,
     setnewCandidate] = useState({firstName: "", lastName: "", email: "", industry: "", skillLevel: ""})
 
@@ -31,9 +41,13 @@ export default function AddTOBoard({open, onClose}) {
     let tempCandidate = {
       ...newCandidate
     };
-    tempCandidate[e.target.id] = e.target.value;
-    console.log(tempCandidate);
-    setnewCandidate(tempCandidate);
+    if (e.target.name === "industry" || e.target.name === "skillLevel") {
+      tempCandidate[e.target.name] = e.target.value;
+      setnewCandidate(tempCandidate);
+    } else {
+      tempCandidate[e.target.id] = e.target.value;
+      setnewCandidate(tempCandidate);
+    }
   }
 
   return (
@@ -68,20 +82,39 @@ export default function AddTOBoard({open, onClose}) {
             label="Email"
             type="email"
             fullWidth/>
-          <TextField
-            onChange={onChange}
-            margin="dense"
-            id="industry"
-            label="Industry"
-            type="text"
-            fullWidth/>
-          <TextField
-            onChange={onChange}
-            margin="dense"
-            id="skillLevel"
-            label="Skill Level"
-            type="text"
-            fullWidth/>
+          <FormControl variant="outlined" className={classes.formControl} fullWidth>
+            <Select
+              className="select"
+              onChange={onChange}
+              margin="dense"
+              id="industry"
+              label="Industry"
+              type="text"
+              value={newCandidate.industry}
+              name="industry">
+              {industries.map((industry) => {
+                return <MenuItem name="industry" key={industry} value={industry}>{industry}</MenuItem>
+              })}
+            </Select>
+            <FormHelperText>Industry</FormHelperText>
+          </FormControl>
+          <FormControl variant="outlined" className={classes.formControl} fullWidth>
+            <Select
+              className="select"
+              onChange={onChange}
+              margin="dense"
+              id="skillLevel"
+              label="Skill Level"
+              type="text"
+              value={newCandidate.skillLevel}
+              name="skillLevel"
+              fullWidth>
+              {skillLevels.map((level) => {
+                return <MenuItem name="skillLevel" key={level} value={level}>{level}</MenuItem>
+              })}
+            </Select>
+            <FormHelperText>Skill Level</FormHelperText>
+          </FormControl>
         </DialogContent>
         <DialogActions>
           <Button onClick={onClose} color="primary">

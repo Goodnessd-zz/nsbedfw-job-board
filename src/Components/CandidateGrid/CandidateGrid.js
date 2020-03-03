@@ -11,7 +11,7 @@ import {makeStyles} from '@material-ui/core/styles';
 import Hero from '../Hero/Hero';
 import {content} from '../../utility/emailContent';
 import api from '../../utility/api';
-import AddTOBoard from '../AddToBoard/AddToBoard';
+import AddToBoard from '../AddToBoard/AddToBoard';
 
 const useStyles = makeStyles(theme => ({
   button: {
@@ -38,7 +38,7 @@ const useStyles = makeStyles(theme => ({
 const CandidateGrid = () => {
   const classes = useStyles();
   const [jobPosts, setJobPosts] = useState([]);
-  const [addToBoardOpen, setAddToBoard] = useState(true);
+  const [addToBoardOpen, setAddToBoard] = useState(false);
 
   useEffect(() => {
     async function fetchData() {
@@ -53,13 +53,12 @@ const CandidateGrid = () => {
   };
 
   const closeAddToBoard = () => {
-    console.log("hey")
     setAddToBoard(false);
   }
   return <Container className={classes.cardGrid} maxWidth="md">
     <Hero header={false}></Hero>
     <Button className={classes.button} variant="outlined" color="primary" onClick={openAddToBoard}>add to board</Button>
-    <AddTOBoard open={addToBoardOpen} onClose={closeAddToBoard}></AddTOBoard>
+    <AddToBoard open={addToBoardOpen} onClose={closeAddToBoard}></AddToBoard>
     <Grid container spacing={4}>
       {jobPosts && jobPosts.map(post => (
         <Grid item key={post.id} xs={12} sm={6} md={4}>
