@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import Dialog from '@material-ui/core/Dialog';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import DialogContent from '@material-ui/core/DialogContent';
@@ -11,107 +11,87 @@ import MenuItem from '@material-ui/core/MenuItem';
 import InputLabel from '@material-ui/core/InputLabel';
 import JobPost from '../JobPost/JobPost'
 import TextFieldWrapper from '../TextFieldWrapper/TextFieldWrapper';
+import api from '../../utility/api';
 
-export default class AddToBoard extends React.Component {
+export default function AddTOBoard({open, onClose}) {
 
-  state = {
-    jobPost: {
-      firstName: ""
-    }
+  const [newCandidate,
+    setnewCandidate] = useState({firstName: "", lastName: "", email: "", industry: "", skillLevel: ""})
+
+  const handleSubmit = () => {
+    api.post('/candidates', newCandidate)
+    onClose();
   }
 
-  constructor({handleClose, open}) {
-    super({handleClose, open});
+  const isEnabled = () => {
+    return newCandidate.firstName.length > 0 && newCandidate.lastName.length > 0 && newCandidate.email.length > 0 && newCandidate.industry.length > 0 && newCandidate.skillLevel.length > 0
   }
-
-  handleChange = (event) => {
-    const value = event.target.value;
-    const id = event.target.id;
-
-    let jobPost = {
-      ...this.state.jobPost
+  const onChange = (e) => {
+    e.preventDefault();
+    let tempCandidate = {
+      ...newCandidate
     };
-
-    jobPost[id] = value;
-
-    this.setState({jobPost})
+    tempCandidate[e.target.id] = e.target.value;
+    console.log(tempCandidate);
+    setnewCandidate(tempCandidate);
   }
 
-  handleClose() {
-    this
-      .props
-      .handleClose(this.state.newJobPost);
-  }
-
-  render() {
-    const {handleClose, open} = this.props;
-
-    return (
-      <Dialog open={open} onClose={handleClose} aria-labelledby="form-dialog-title">
-        <DialogTitle id="form-dialog-title">Subscribe</DialogTitle>
+  return (
+    <div>
+      <Dialog open={open} onClose={onClose} aria-labelledby="form-dialog-title">
+        <DialogTitle id="form-dialog-title">New Candidate</DialogTitle>
         <DialogContent>
           <DialogContentText>
-            Enter your information here to add yourself the Job Board!
+            {`We want to get you hired! Enter the information requested below to let our parterning
+            companies know that you are interested. Email info@nsbedfw.org if you would 
+            no longer like to be listed.`}
           </DialogContentText>
-          {Object.keys(this.state.jobPost).map(item => {
-            return<TextFieldWrapper 
-            value={item}
-            onChange = {this.handleChange}/>
-          })}
           <TextField
-            value={this.state.jobPost.firstNameJ}
+            onChange={onChange}
+            autoFocus
             margin="dense"
             id="firstName"
             label="First Name"
-            fullWidth
-            onChange={this.handleChange}/>
+            type="text"
+            fullWidth/>
           <TextField
-            value={this.state.jobPost.lastName}
+            onChange={onChange}
             margin="dense"
             id="lastName"
             label="Last Name"
-            fullWidth
-            onChange={this.handleChange}/>
+            type="text"
+            fullWidth/>
           <TextField
-            value={this.state.jobPost.industry}
+            onChange={onChange}
+            margin="dense"
+            id="email"
+            label="Email"
+            type="email"
+            fullWidth/>
+          <TextField
+            onChange={onChange}
             margin="dense"
             id="industry"
             label="Industry"
-            fullWidth
-            onChange={this.handleChange}/>
-          <InputLabel id="skillLevel">Skill Level</InputLabel>
-          <Select
-            labelId="skill-level"
-            label="Skill level"
-            id="skillLevel"
-            fullWidth
-            value={this.state.jobPost.skillLevel}
-            onChange={this.handleChange}>
-            <MenuItem value="">
-              <em>None</em>
-            </MenuItem>
-            <MenuItem value="Entry">Entry</MenuItem>
-            <MenuItem value="Associate">Associate</MenuItem>
-            <MenuItem value="Senior">Senior</MenuItem>
-          </Select>
+            type="text"
+            fullWidth/>
           <TextField
-            value={this.state.jobPost.email}
+            onChange={onChange}
             margin="dense"
-            id="email"
-            label="email"
-            fullWidth
-            onChange={this.handleChange}/>
+            id="skillLevel"
+            label="Skill Level"
+            type="text"
+            fullWidth/>
         </DialogContent>
-        <h1>{this.state.jobPost.firstName}</h1>
         <DialogActions>
-          <Button onClick={this.handleClose} color="primary">
+          <Button onClick={onClose} color="primary">
             Cancel
           </Button>
-          <Button onClick={handleClose} color="primary">
-            Add To Board
+          <Button disabled={!isEnabled()} onClick={handleSubmit} color="primary">
+            Subscribe
           </Button>
         </DialogActions>
       </Dialog>
-    );
-  }
+    </div>
+  );
 }
