@@ -121,7 +121,7 @@ export default function AddToBoard({open, onClose}) {
             Cancel
           </Button>
           <Button disabled={!isEnabled()} onClick={handleSubmit} color="primary">
-            Subscribe
+            Add
           </Button>
         </DialogActions>
       </Dialog>
