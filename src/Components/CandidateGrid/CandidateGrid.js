@@ -65,7 +65,8 @@ const CandidateGrid = () => {
           <Card className={classes.card}>
             <CardMedia
               className={classes.cardMedia}
-              image={`https://source.unsplash.com/featured/?${post.industry}`}
+              // image={`https://source.unsplash.com/featured/?${post.industry}`}
+              image={`https://source.unsplash.com/search/photos?query=${post.industry}`}
               title="Image title"/>
             <CardContent className={classes.cardContent}>
               <Typography gutterBottom variant="h5" component="h2">
