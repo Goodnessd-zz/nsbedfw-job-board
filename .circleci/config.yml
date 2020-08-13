@@ -12,25 +12,47 @@
 #     jobs:
 #       - welcome/rundssdfs
 
+version: 2.1
+
+orbs:
+  react: thefrontside/react@0.2.0
+
+workflows:
+  push:
+    jobs:
+      - react/install
+      - react/eslint:
+          requires:
+            - react/install
+      - react/stylelint:
+          requires:
+            - react/install
+      - react/test:
+          requires:
+            - react/install
+      - react/coverage:
+          requires:
+            - react/install
+  
 
 
 
-version: 2
-jobs:  
-  build:    
-    docker:      
-      - image: circleci/node:8    
-    steps:      
-      - checkout
+# version: 2
+# jobs:  
+#   build:    
+#     docker:      
+#       - image: circleci/node:8    
+#     steps:      
+#       - checkout
 
-      - restore_cache: # special step to restore the dependency cache          
-          key: dependency-cache-{{ checksum "package.json" }}      
+#       - restore_cache: # special step to restore the dependency cache          
+#           key: dependency-cache-{{ checksum "package.json" }}      
       
-      - run:          
-          name: Setup Dependencies          
-          command: npm install          
+#       - run:          
+#           name: Setup Dependencies          
+#           command: npm install          
       
-      - save_cache: # special step to save the dependency cache          
-          key: dependency-cache-{{ checksum "package.json" }}          
-          paths:            
-            - ./node_modules      
+#       - save_cache: # special step to save the dependency cache          
+#           key: dependency-cache-{{ checksum "package.json" }}          
+#           paths:            
+#             - ./node_modules      
