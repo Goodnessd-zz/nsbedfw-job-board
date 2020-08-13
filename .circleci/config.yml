@@ -10,7 +10,7 @@
 #   welcome:
 #     # Run the welcome/run job in its own container
 #     jobs:
-#       - welcome/rundssdfs
+#       - welcome/run
 
 version: 2.1
 
