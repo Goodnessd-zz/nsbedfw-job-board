@@ -55,9 +55,9 @@ jobs:
           paths:            
             - ./node_modules
       
-      - run:
-          name: Build npm
-          command: npm run build
+      # - run:
+      #     name: Build npm
+      #     command: npm run build
 
 
 # version: 2.1
